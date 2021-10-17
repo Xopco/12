@@ -3,7 +3,7 @@ version: "3.2"
 services:
   builder:
     build:
-      context: 1/
+      context: .
     volumes:
       - type: volume
         source: site
