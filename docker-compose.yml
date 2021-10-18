@@ -8,9 +8,17 @@ services:
       - type: volume
         source: site
         target: /usr/local/tomcat/target
+
+  web:
+    image: tomcat:8.5.3-jre8-alpine
+    volumes:
+      - type: volume
+        source: site
+        target: /usr/local/tomcat/webapps
     ports:
       - "8080:8080"
-
+    depends_on:
+      - builder
 
 volumes:
   site:
